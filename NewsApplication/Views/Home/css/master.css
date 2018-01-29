@@ -1,0 +1,77 @@
+﻿.main-container {
+}
+
+.property-box-container,
+.tree-view-container,
+.text-view-container {
+    height: 450px;
+    overflow: auto;
+}
+
+.property-container button {
+    margin: 5px;
+}
+
+.node-element {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 10px;
+}
+
+.branch {
+    margin-left: 10%;
+}
+
+.clicked {
+    background-color: #bce8f1;
+}
+
+#textinput {
+    margin-left: 10%;
+}
+
+.panel-heading {
+    display: inline-block;
+}
+
+.ion-loop {
+    font-size: 25px;
+    color: #bce8f1;
+}
+
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+}
+
+.context-menu {
+    width: 200px;
+    height: auto;
+    box-shadow: 0 0 20px 0 #ccc;
+    position: absolute;
+    display: none;
+    background: #f6f6f6;
+}
+
+    .context-menu ul {
+        list-style: none;
+        padding: 5px 0px 5px 0px;
+    }
+
+        .context-menu ul li {
+            padding: 10px 5px 10px 5px;
+            border-left: 4px solid transparent;
+            cursor: pointer;
+        }
+
+            .context-menu ul li:hover {
+                background: #eee;
+                border-left: 4px solid #666;
+            }
+
+.node-element-text {
+    width: auto;
+    margin: 0 0 0px;
+    font-size: 0.9em;
+}

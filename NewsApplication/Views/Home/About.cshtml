@@ -2,6 +2,56 @@
     ViewData["Title"] = "About";
 }
 <h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+    <link rel="stylesheet" href="./css/master.css">
+    <!-- Latest compiled and minified CSS -->
+    <div id="app">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">XML-redaktor</a>
+            </div>
+        </div>
+        <div class="jumbotron">
+        </div>
+        <div class="main-container container ">
+            <div class="row">
+                <div class="property-box-container panel panel-default col-md-4">
+                    <h2>Property-box</h2>
+                    <div class="property-container panel-body">
+                        <label for="tagname">Tagname:</label><input id="tagname" @@blur="treeout" type="text" v-model="currentNode.tagname"><br>
+                        <label for="textinput">Text:</label><input id="textinput" @@blur="treeout" type="text" v-model="currentNode.text">
+                        <button @@click="addElement" class="btn btn-success btn-md">Create new element</button>
+                        <button @@click="deleteElement" class="btn btn-danger btn-md">Delete element</button>
+                        <div class="panel panel-success">
+                            <div class="panel-heading"><h4>Attributes</h4></div>
+                            <div class="panel-body">
+                                <input v-model="AttributeName" placeholder="Name" type="text">
+                                <input v-model="AttributeValue" placeholder="Value" type="text">
+                                <br>
+                                <button @@click="addAttribute" class="btn btn-success">+Add</button>
+                            </div>
+                        </div>
 
-<p>Use this area to provide additional information.</p>
+                    </div>
+                    <div @@click="XmlDownload"><a style="margin-left: 15px; " download="XML-redaktor.txt" id="test" href="#">Download in txt file</a></div>
+
+                </div>
+                <div class="tree-view-container panel panel-default col-md-4">
+                    <h2>Tree-view</h2>
+                    <div class="tree-viewer panel-body" id="tree-view-container">
+                        <treeviewer v-on:changeid="refreshBox" :treeid="tree"></treeviewer>
+                    </div>
+                </div>
+                <div class="text-view-container panel panel-default col-md-4">
+                    <div><h2>Text-view <i class="ion-loop" @@click="treeout"></i></h2> </div>
+                    <div class="panel-body"><textarea class="text-view" rows="16" v-model="textareatext"></textarea></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contextMenu" class="context-menu">
+        <ul>
+            <li @@click="addElement">Add Element</li>
+            <li @@click="deleteElement">Delete Element</li>
+        </ul>
+    </div>
+    <script src="xml-redaktor.js" charset="utf-8"></script>
